@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Evidencias - Física I</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="navbar">
+
+            <h2>Portafolio Física </h2>
+
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobreMi">Sobre mí</a></li>
+                <li><a href="#semana1">Semana 1</a></li>
+                <li><a href="#semana2">Semana 2</a></li>
+                <li><a href="#semana3">Semana 3</a></li>
+                <li><a href="#semana4">Semana 4</a></li>
+                <li><a href="#semana5">Semana 5</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-text">
+
+            <h1>Portafolio de Evidencias</h1>
+
+            <h2>Física I</h2>
+
+            <p>
+                Aplicaciones de la Física Mecánica
+                en la Ingeniería de Software.
+            </p>
+
+            <a href="#sobreMi" class="btn">
+                Comenzar
+            </a>
+
+        </div>
+
+        <div class="hero-img">
+
+
+            <img src="images/Portada fisica.png" alt="Portada">
+
+        </div>
+
+    </section>
+
+
+    <section class="sobreMi" id="sobreMi">
+
+        <h2>Sobre mí</h2>
+
+        <div class="card">
+
+            <p>
+                Mi nombre es <strong>Geiner Andrey</strong> y soy estudiante de
+                Ingeniería de Software en la Universidad CENFOTEC.
+            </p>
+
+            <p>
+                Este portafolio recopila los temas estudiados durante las primeras
+                cinco semanas del curso de Física I, mostrando cómo los principios
+                de la física mecánica pueden aplicarse al desarrollo de software.
+            </p>
+
+            <p>
+                Cada sección presenta un caso real de aplicación en Ingeniería de
+                Software, el concepto físico correspondiente, una breve justificación
+                de su importancia y un elemento visual que facilita la comprensión
+                del tema.
+            </p>
+
+        </div>
+
+    </section>
+
+<section class="semana" id="semana1">
+
+    <h2>Semana 1</h2>
+
+    <h3>Cinemática: Velocidad, Aceleración, Desplazamiento, MRU y MRUA</h3>
+
+    <div class="card">
+
+        <p>
+            La cinemática es la rama de la física que estudia el movimiento de los
+            cuerpos sin considerar las fuerzas que lo producen. En esta semana se
+            analizan conceptos fundamentales como la velocidad, la aceleración y el
+            desplazamiento, además del Movimiento Rectilíneo Uniforme (MRU) y el
+            Movimiento Rectilíneo Uniformemente Acelerado (MRUA). Estos principios
+            permiten describir cómo cambia la posición de un objeto a lo largo del
+            tiempo y constituyen la base para muchos sistemas tecnológicos.
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software</h4>
+
+        <p>
+            Un caso concreto es el desarrollo de un videojuego de plataformas en
+            2D, donde el personaje debe correr, saltar y caer de forma realista.
+            El motor del juego calcula continuamente la posición del personaje
+            utilizando las ecuaciones del MRU cuando se desplaza a velocidad
+            constante y las del MRUA cuando interviene la gravedad durante un
+            salto. Esto evita movimientos artificiales y mejora la experiencia del
+            jugador.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Velocidad:</strong></p>
+
+        <p>
+            v = Δx / Δt
+        </p>
+
+        <p>
+            La velocidad representa el cambio de posición de un objeto respecto al
+            tiempo.
+        </p>
+
+        <p><strong>Aceleración:</strong></p>
+
+        <p>
+            a = Δv / Δt
+        </p>
+
+        <p>
+            La aceleración indica qué tan rápido cambia la velocidad.
+        </p>
+
+        <p><strong>Movimiento Rectilíneo Uniformemente Acelerado (MRUA):</strong></p>
+
+        <p>
+            x = x₀ + v₀t + ½at²
+        </p>
+
+        <p>
+            Esta ecuación permite calcular la posición de un objeto cuando existe
+            una aceleración constante, como ocurre con la gravedad.
+        </p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            Aplicar estas ecuaciones permite que el software calcule el movimiento
+            en tiempo real con precisión. Si el movimiento se programara únicamente
+            con posiciones fijas o animaciones predefinidas, el resultado sería
+            poco natural y menos adaptable a diferentes situaciones del programa.
+            Por ello, la cinemática es una herramienta esencial en motores físicos,
+            simuladores y videojuegos modernos.
+        </p>
+
+
+
+
+
+    </div>
+
+</section>
+
+
+
+<section class="semana" id="semana2">
+
+    <h2>Semana 2</h2>
+
+    <h3>Movimiento en 2 y 3 Dimensiones y Movimiento Circular Uniforme</h3>
+
+    <div class="card">
+
+        <p>
+            En esta semana se estudió el movimiento de los cuerpos cuando se desplazan
+            en dos o tres dimensiones, así como el Movimiento Circular Uniforme (MCU).
+            Estos conceptos permiten analizar trayectorias más complejas que una línea
+            recta, considerando cambios de dirección y movimientos alrededor de un eje.
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software</h4>
+
+        <p>
+            Un ejemplo es el desarrollo de simuladores de drones. El software calcula
+            constantemente la posición del dron en los ejes X, Y y Z para controlar su
+            desplazamiento. Además, cuando el dron realiza giros o movimientos circulares,
+            se utilizan los principios del Movimiento Circular Uniforme para mantener una
+            trayectoria estable y precisa.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Velocidad angular:</strong></p>
+
+        <p>ω = θ / t</p>
+
+        <p><strong>Aceleración centrípeta:</strong></p>
+
+        <p>ac = v² / r</p>
+
+        <p>
+            Estas ecuaciones permiten calcular la velocidad de rotación y la aceleración
+            necesaria para mantener un objeto en una trayectoria circular.
+        </p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            Utilizar estos principios permite desarrollar simulaciones más precisas y
+            realistas. Sin estos cálculos, los movimientos podrían presentar errores en
+            la trayectoria, afectando el funcionamiento de simuladores, videojuegos o
+            aplicaciones de realidad virtual.
+        </p>
+
+
+
+
+    </div>
+
+</section>
+
+
+<section class="semana" id="semana3">
+
+    <h2>Semana 3</h2>
+
+    <h3>Fuerzas, Leyes de Newton, Fuerzas Elásticas y de Fricción</h3>
+
+    <div class="card">
+
+        <p>
+            Las Leyes de Newton explican la relación entre las fuerzas y el movimiento
+            de los cuerpos. Además, las fuerzas elásticas y de fricción permiten modelar
+            situaciones donde existen deformaciones o resistencia al movimiento, siendo
+            fundamentales en numerosos sistemas físicos y tecnológicos.
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software</h4>
+
+        <p>
+            Un caso específico es el desarrollo de motores físicos para videojuegos como
+            los de carreras. El software calcula la fricción entre las llantas y la
+            carretera para determinar la aceleración, el frenado y el agarre del vehículo,
+            logrando una conducción más realista.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Segunda Ley de Newton:</strong></p>
+
+        <p>F = m · a</p>
+
+        <p><strong>Fuerza de fricción:</strong></p>
+
+        <p>Ff = μN</p>
+
+        <p>
+            Estas ecuaciones permiten calcular cómo las fuerzas modifican el movimiento
+            de un objeto y cómo la fricción influye en su desplazamiento.
+        </p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            La aplicación de estas leyes permite que los motores físicos respondan de
+            manera realista a las acciones del usuario. Sin estos modelos físicos, los
+            movimientos serían poco naturales y reducirían la calidad de la simulación
+            o del videojuego.
+        </p>
+
+   
+
+        
+
+    </div>
+
+</section>
+
+
+
+    <section class="semana" id="semana4">
+
+    <h2>Semana 4</h2>
+
+    <h3>Trabajo, Energía Cinética y Conservación de la Energía</h3>
+
+    <div class="card">
+
+        <p>
+            Durante esta semana se estudiaron los conceptos de trabajo, energía cinética y el principio de conservación de la energía. Estos permiten comprender cómo la energía se transfiere y transforma durante el movimiento de un cuerpo, sin desaparecer, sino cambiando de una forma a otra.
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software</h4>
+
+        <p>
+            Un caso específico se encuentra en el desarrollo de simuladores físicos y videojuegos donde un personaje desciende por una montaña rusa. El motor del juego calcula la transformación entre energía potencial y energía cinética para determinar la velocidad en cada punto del recorrido, ofreciendo una experiencia mucho más realista.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Trabajo:</strong></p>
+
+        <p>W = F · d</p>
+
+        <p><strong>Energía Cinética:</strong></p>
+
+        <p>Ec = ½mv²</p>
+
+        <p><strong>Conservación de la Energía:</strong></p>
+
+        <p>Ep + Ec = Constante</p>
+
+        <p>
+            Estas ecuaciones permiten calcular la energía presente en un sistema y cómo cambia durante el movimiento.
+        </p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            El uso de estos principios permite que las simulaciones respondan de manera natural a los cambios de velocidad y altura. Sin estos cálculos físicos, el movimiento sería artificial y disminuiría el realismo del software.
+        </p>
+
+        
+
+
+    </div>
+
+</section>
+
+   
+    <section class="semana" id="semana4">
+
+    <h2>Semana 4</h2>
+
+    <h3>Trabajo, Energía Cinética y Conservación de la Energía</h3>
+
+    <div class="card">
+
+        <p>
+            Durante esta semana se estudiaron los conceptos de trabajo, energía cinética y el principio de conservación de la energía. Estos permiten comprender cómo la energía se transfiere y transforma durante el movimiento de un cuerpo, sin desaparecer, sino cambiando de una forma a otra.
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software</h4>
+
+        <p>
+            Un caso específico se encuentra en el desarrollo de simuladores físicos y videojuegos donde un personaje desciende por una montaña rusa. El motor del juego calcula la transformación entre energía potencial y energía cinética para determinar la velocidad en cada punto del recorrido, ofreciendo una experiencia mucho más realista.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Trabajo:</strong></p>
+
+        <p>W = F · d</p>
+
+        <p><strong>Energía Cinética:</strong></p>
+
+        <p>Ec = ½mv²</p>
+
+        <p><strong>Conservación de la Energía:</strong></p>
+
+        <p>Ep + Ec = Constante</p>
+
+        <p>
+            Estas ecuaciones permiten calcular la energía presente en un sistema y cómo cambia durante el movimiento.
+        </p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            El uso de estos principios permite que las simulaciones respondan de manera natural a los cambios de velocidad y altura. Sin estos cálculos físicos, el movimiento sería artificial y disminuiría el realismo del software.
+        </p>
+
+     
+
+       
+
+    </div>
+
+</section>
+
+    <footer>
+
+        <p>
+            Portafolio de Evidencias | Física I
+        </p>
+
+        <p>
+            Universidad CENFOTEC | 2026
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
