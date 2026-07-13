@@ -1,4 +1,4 @@
-// Animación al hacer scroll
+
 
 const cards = document.querySelectorAll(".card");
 
@@ -31,7 +31,7 @@ window.addEventListener("scroll",mostrar);
 mostrar();
 
 
-// Botón volver arriba
+
 
 const boton = document.createElement("button");
 

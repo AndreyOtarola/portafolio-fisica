@@ -1,7 +1,3 @@
-/* ===========================
-   ESTILOS GENERALES
-=========================== */
-
 *{
     margin:0;
     padding:0;
@@ -16,9 +12,7 @@ body{
     line-height:1.7;
 }
 
-/* ===========================
-   NAVBAR
-=========================== */
+
 
 header{
     background:#0f172a;
@@ -179,6 +173,87 @@ section h3{
 }
 
 /* ===========================
+   SIMULACIONES
+=========================== */
+
+.simulacion{
+    margin-top:20px;
+    background:#0f172a;
+    border-radius:12px;
+    padding:20px;
+}
+
+.simulacion canvas{
+    width:100%;
+    max-width:700px;
+    display:block;
+    margin:0 auto;
+    background:#f4f7fb;
+    border-radius:8px;
+}
+
+.controles{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    align-items:center;
+    justify-content:center;
+    margin-top:18px;
+}
+
+.controles label{
+    color:#e2e8f0;
+    font-size:14px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.controles input[type="range"]{
+    accent-color:#38bdf8;
+}
+
+.controles select{
+    padding:4px 6px;
+    border-radius:6px;
+    border:none;
+}
+
+.btn-sim{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:500;
+    transition:.3s;
+    align-self:flex-end;
+}
+
+.btn-sim:hover{
+    background:#1d4ed8;
+}
+
+.btn-sim.secundario{
+    background:transparent;
+    border:1px solid #64748b;
+}
+
+.btn-sim.secundario:hover{
+    background:#1e293b;
+}
+
+.datos-sim{
+    text-align:center;
+    color:#e2e8f0;
+    margin-top:16px;
+    font-size:15px;
+    font-weight:500;
+}
+
+/* ===========================
    FOOTER
 =========================== */
 
@@ -256,6 +331,19 @@ footer{
 
 .card{
     padding:25px;
+}
+
+.simulacion{
+    padding:14px;
+}
+
+.controles{
+    flex-direction:column;
+    align-items:stretch;
+}
+
+.btn-sim{
+    align-self:stretch;
 }
 
 }

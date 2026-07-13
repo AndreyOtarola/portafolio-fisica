@@ -29,6 +29,8 @@
                 <li><a href="#semana3">Semana 3</a></li>
                 <li><a href="#semana4">Semana 4</a></li>
                 <li><a href="#semana5">Semana 5</a></li>
+                <li><a href="#semana6">Semana 6</a></li>
+                <li><a href="#semana8">Semana 8</a></li>
             </ul>
 
         </nav>
@@ -76,16 +78,17 @@
             </p>
 
             <p>
-                Este portafolio recopila los temas estudiados durante las primeras
-                cinco semanas del curso de Física I, mostrando cómo los principios
-                de la física mecánica pueden aplicarse al desarrollo de software.
+                Este portafolio recopila los temas estudiados desde la semana 1 hasta
+                la semana 8 del curso de Física I (la semana 7 no tuvo tema asignado),
+                mostrando cómo los principios de la física mecánica pueden aplicarse
+                al desarrollo de software.
             </p>
 
             <p>
                 Cada sección presenta un caso real de aplicación en Ingeniería de
                 Software, el concepto físico correspondiente, una breve justificación
-                de su importancia y un elemento visual que facilita la comprensión
-                del tema.
+                de su importancia y un elemento de apoyo (simulación interactiva o
+                imagen) que facilita la comprensión del tema.
             </p>
 
         </div>
@@ -167,9 +170,35 @@
             simuladores y videojuegos modernos.
         </p>
 
+        <h4>Elemento de apoyo</h4>
 
+        <div class="simulacion">
+            <canvas id="canvasMRUA" width="700" height="180"></canvas>
 
+            <div class="controles">
+                <label>Velocidad inicial (v₀): <span id="valV0">2</span> m/s
+                    <input type="range" id="sliderV0" min="0" max="10" step="0.5" value="2">
+                </label>
+                <label>Aceleración (a): <span id="valA">1</span> m/s²
+                    <input type="range" id="sliderA" min="-3" max="5" step="0.5" value="1">
+                </label>
+                <button class="btn-sim" id="btnMRUA">Iniciar</button>
+                <button class="btn-sim secundario" id="btnMRUAReset">Reiniciar</button>
+            </div>
 
+            <p class="datos-sim">
+                t = <span id="outT">0.0</span> s &nbsp;|&nbsp;
+                v = <span id="outV">0.0</span> m/s &nbsp;|&nbsp;
+                x = <span id="outX">0.0</span> m
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Simulación interactiva de MRUA: se ajusta la velocidad inicial y la
+            aceleración para observar en tiempo real cómo cambian la posición y la
+            velocidad del objeto, igual que lo haría el motor físico de un
+            videojuego.
+        </p>
 
     </div>
 
@@ -226,8 +255,32 @@
             aplicaciones de realidad virtual.
         </p>
 
+        <h4>Elemento de apoyo</h4>
 
+        <div class="simulacion">
+            <canvas id="canvasMCU" width="700" height="260"></canvas>
 
+            <div class="controles">
+                <label>Velocidad angular (ω): <span id="valOmega">1.5</span> rad/s
+                    <input type="range" id="sliderOmega" min="0.2" max="4" step="0.1" value="1.5">
+                </label>
+                <label>Radio (r): <span id="valR">80</span> px
+                    <input type="range" id="sliderR" min="40" max="110" step="5" value="80">
+                </label>
+                <button class="btn-sim" id="btnMCU">Iniciar / Pausar</button>
+            </div>
+
+            <p class="datos-sim">
+                v = <span id="outVMCU">0.0</span> m/s &nbsp;|&nbsp;
+                ac = <span id="outAc">0.0</span> m/s²
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Simulación de Movimiento Circular Uniforme: al aumentar la velocidad angular
+            o reducir el radio, se observa (y se calcula) cómo crece la aceleración
+            centrípeta necesaria para mantener el objeto en la órbita.
+        </p>
 
     </div>
 
@@ -238,18 +291,82 @@
 
     <h2>Semana 3</h2>
 
-    <h3>Fuerzas, Leyes de Newton, Fuerzas Elásticas y de Fricción</h3>
+    <h3>Fuerza Centrípeta y Fuerza de Fricción</h3>
 
     <div class="card">
 
         <p>
-            Las Leyes de Newton explican la relación entre las fuerzas y el movimiento
-            de los cuerpos. Además, las fuerzas elásticas y de fricción permiten modelar
-            situaciones donde existen deformaciones o resistencia al movimiento, siendo
-            fundamentales en numerosos sistemas físicos y tecnológicos.
+            Cuando un cuerpo se mueve en una trayectoria circular, existe una fuerza neta
+            dirigida hacia el centro de la curva llamada fuerza centrípeta, sin la cual el
+            objeto no podría mantener su trayectoria y saldría disparado en línea recta.
+            Además, las fuerzas de fricción permiten modelar la resistencia al movimiento
+            entre dos superficies en contacto, siendo ambas fundamentales en numerosos
+            sistemas físicos y tecnológicos.
         </p>
 
-        <h4>Aplicación en Ingeniería de Software</h4>
+        <h4>Aplicación en Ingeniería de Software — Fuerza Centrípeta</h4>
+
+        <p>
+            Un caso concreto es el motor físico de un videojuego de carreras que calcula si
+            un vehículo puede tomar una curva a cierta velocidad sin salirse de la pista. El
+            software determina la fuerza centrípeta necesaria para mantener el auto en la
+            trayectoria circular y la compara contra la fuerza de fricción máxima disponible
+            entre las llantas y el pavimento; si la fuerza requerida supera a la disponible,
+            el vehículo derrapa hacia afuera de la curva.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Fuerza centrípeta:</strong></p>
+
+        <p>Fc = m·v² / r</p>
+
+        <p>
+            Esta ecuación calcula la fuerza necesaria para mantener un objeto de masa m en
+            una trayectoria circular de radio r a una velocidad v.
+        </p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            Comparar la fuerza centrípeta requerida contra la fricción disponible permite que
+            el juego determine de forma físicamente correcta la velocidad máxima segura en
+            cada curva, en vez de fijar arbitrariamente "esta curva se toma a tal velocidad",
+            lo cual no se adaptaría a distintos radios de curva ni a superficies con distinto
+            agarre.
+        </p>
+
+        <h4>Elemento de apoyo</h4>
+
+        <div class="simulacion">
+            <canvas id="canvasCentripeta" width="700" height="260"></canvas>
+
+            <div class="controles">
+                <label>Velocidad del auto: <span id="valVAuto">12</span> m/s
+                    <input type="range" id="sliderVAuto" min="2" max="30" step="1" value="12">
+                </label>
+                <label>Radio de la curva: <span id="valRCurva">80</span> m
+                    <input type="range" id="sliderRCurva" min="20" max="120" step="5" value="80">
+                </label>
+                <label>Fricción disponible (μ): <span id="valMuCurva">0.8</span>
+                    <input type="range" id="sliderMuCurva" min="0.2" max="1.5" step="0.05" value="0.8">
+                </label>
+            </div>
+
+            <p class="datos-sim">
+                Fc necesaria = <span id="outFcNec">0</span> N &nbsp;|&nbsp;
+                Fricción máx. = <span id="outFricMax">0</span> N &nbsp;|&nbsp;
+                <span id="outDerrape">—</span>
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Simulación de un auto tomando una curva: se ajustan velocidad, radio y fricción
+            disponible para ver si la fuerza centrípeta requerida excede a la fricción máxima
+            (masa fija de 1000 kg), es decir, si el vehículo derrapa fuera de la pista.
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software — Fricción</h4>
 
         <p>
             Un caso específico es el desarrollo de motores físicos para videojuegos como
@@ -282,17 +399,40 @@
             o del videojuego.
         </p>
 
-   
+        <h4>Elemento de apoyo</h4>
 
-        
+        <div class="simulacion">
+            <canvas id="canvasFriccion" width="700" height="220"></canvas>
+
+            <div class="controles">
+                <label>Ángulo del plano (θ): <span id="valAngulo">20</span>°
+                    <input type="range" id="sliderAngulo" min="0" max="45" step="1" value="20">
+                </label>
+                <label>Coef. de fricción (μ): <span id="valMu">0.3</span>
+                    <input type="range" id="sliderMu" min="0" max="1" step="0.05" value="0.3">
+                </label>
+                <button class="btn-sim" id="btnFriccion">Soltar caja</button>
+                <button class="btn-sim secundario" id="btnFriccionReset">Reiniciar</button>
+            </div>
+
+            <p class="datos-sim">
+                a neta = <span id="outANeta">0.0</span> m/s² &nbsp;|&nbsp;
+                <span id="outEstado">La caja está en reposo</span>
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Simulación de un bloque sobre un plano inclinado: se compara la componente
+            del peso a favor del movimiento contra la fuerza de fricción para determinar
+            si el bloque se desliza o permanece estático, igual que en un motor físico.
+        </p>
 
     </div>
 
 </section>
 
 
-
-    <section class="semana" id="semana4">
+<section class="semana" id="semana4">
 
     <h2>Semana 4</h2>
 
@@ -301,13 +441,20 @@
     <div class="card">
 
         <p>
-            Durante esta semana se estudiaron los conceptos de trabajo, energía cinética y el principio de conservación de la energía. Estos permiten comprender cómo la energía se transfiere y transforma durante el movimiento de un cuerpo, sin desaparecer, sino cambiando de una forma a otra.
+            Durante esta semana se estudiaron los conceptos de trabajo, energía cinética y el
+            principio de conservación de la energía. Estos permiten comprender cómo la energía
+            se transfiere y transforma durante el movimiento de un cuerpo, sin desaparecer,
+            sino cambiando de una forma a otra.
         </p>
 
         <h4>Aplicación en Ingeniería de Software</h4>
 
         <p>
-            Un caso específico se encuentra en el desarrollo de simuladores físicos y videojuegos donde un personaje desciende por una montaña rusa. El motor del juego calcula la transformación entre energía potencial y energía cinética para determinar la velocidad en cada punto del recorrido, ofreciendo una experiencia mucho más realista.
+            Un caso específico se encuentra en el desarrollo de simuladores físicos y
+            videojuegos donde un personaje desciende por una montaña rusa. El motor del juego
+            calcula la transformación entre energía potencial y energía cinética para
+            determinar la velocidad en cada punto del recorrido, ofreciendo una experiencia
+            mucho más realista.
         </p>
 
         <h4>Concepto físico aplicado</h4>
@@ -325,68 +472,339 @@
         <p>Ep + Ec = Constante</p>
 
         <p>
-            Estas ecuaciones permiten calcular la energía presente en un sistema y cómo cambia durante el movimiento.
+            Estas ecuaciones permiten calcular la energía presente en un sistema y cómo cambia
+            durante el movimiento.
         </p>
 
         <h4>Justificación</h4>
 
         <p>
-            El uso de estos principios permite que las simulaciones respondan de manera natural a los cambios de velocidad y altura. Sin estos cálculos físicos, el movimiento sería artificial y disminuiría el realismo del software.
+            El uso de estos principios permite que las simulaciones respondan de manera
+            natural a los cambios de velocidad y altura. Sin estos cálculos físicos, el
+            movimiento sería artificial y disminuiría el realismo del software.
         </p>
 
-        
+        <h4>Elemento de apoyo</h4>
 
+        <div class="simulacion">
+            <canvas id="canvasEnergia" width="700" height="260"></canvas>
+
+            <div class="controles">
+                <button class="btn-sim" id="btnEnergia">Soltar bola</button>
+                <button class="btn-sim secundario" id="btnEnergiaReset">Reiniciar</button>
+            </div>
+
+            <p class="datos-sim">
+                Ep = <span id="outEp">0</span> J &nbsp;|&nbsp;
+                Ec = <span id="outEc">0</span> J &nbsp;|&nbsp;
+                Total = <span id="outEtotal">0</span> J
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Simulación de una bola descendiendo por una rampa curva: las barras muestran
+            cómo la energía potencial se transforma en energía cinética conforme baja,
+            manteniéndose la energía total constante.
+        </p>
 
     </div>
 
 </section>
 
-   
-    <section class="semana" id="semana4">
 
-    <h2>Semana 4</h2>
+<section class="semana" id="semana5">
 
-    <h3>Trabajo, Energía Cinética y Conservación de la Energía</h3>
+    <h2>Semana 5</h2>
+
+    <h3>Impulso y Colisiones Inelásticas</h3>
 
     <div class="card">
 
         <p>
-            Durante esta semana se estudiaron los conceptos de trabajo, energía cinética y el principio de conservación de la energía. Estos permiten comprender cómo la energía se transfiere y transforma durante el movimiento de un cuerpo, sin desaparecer, sino cambiando de una forma a otra.
+            El impulso es la magnitud que relaciona la fuerza aplicada sobre un cuerpo con el
+            tiempo durante el cual actúa, y es igual al cambio en su momento lineal (teorema
+            impulso-momento). Por su parte, una colisión inelástica es aquella en la que los
+            cuerpos no conservan la energía cinética total; en el caso perfectamente
+            inelástico, los cuerpos quedan unidos y se mueven con una velocidad común después
+            del choque.
         </p>
 
-        <h4>Aplicación en Ingeniería de Software</h4>
+        <h4>Aplicación en Ingeniería de Software — Impulso</h4>
 
         <p>
-            Un caso específico se encuentra en el desarrollo de simuladores físicos y videojuegos donde un personaje desciende por una montaña rusa. El motor del juego calcula la transformación entre energía potencial y energía cinética para determinar la velocidad en cada punto del recorrido, ofreciendo una experiencia mucho más realista.
+            Un caso concreto es el sistema de propulsión de una nave en un simulador espacial
+            (al estilo Kerbal Space Program), donde el software calcula el impulso que
+            generan los motores al expulsar gas a alta velocidad (propulsión a chorro) durante
+            un intervalo de tiempo, para determinar el cambio de velocidad que experimenta la
+            nave.
         </p>
 
         <h4>Concepto físico aplicado</h4>
 
-        <p><strong>Trabajo:</strong></p>
+        <p><strong>Impulso (teorema impulso-momento):</strong></p>
 
-        <p>W = F · d</p>
-
-        <p><strong>Energía Cinética:</strong></p>
-
-        <p>Ec = ½mv²</p>
-
-        <p><strong>Conservación de la Energía:</strong></p>
-
-        <p>Ep + Ec = Constante</p>
+        <p>J = F · Δt = Δp = m · Δv</p>
 
         <p>
-            Estas ecuaciones permiten calcular la energía presente en un sistema y cómo cambia durante el movimiento.
+            El impulso generado por el motor durante un tiempo Δt es igual al cambio en el
+            momento lineal de la nave, lo que permite calcular directamente su cambio de
+            velocidad (Δv).
         </p>
 
         <h4>Justificación</h4>
 
         <p>
-            El uso de estos principios permite que las simulaciones respondan de manera natural a los cambios de velocidad y altura. Sin estos cálculos físicos, el movimiento sería artificial y disminuiría el realismo del software.
+            Calcular el impulso real permite que el simulador determine con precisión cuánto
+            combustible o tiempo de encendido se necesita para alcanzar una velocidad
+            objetivo, tal como lo hace el software real de control de misiones espaciales. Fijar
+            un cambio de velocidad arbitrario al activar los motores, en cambio, ignora la
+            relación física entre fuerza, tiempo y masa de la nave.
         </p>
 
-     
+        <h4>Elemento de apoyo</h4>
 
-       
+        <div class="simulacion">
+            <canvas id="canvasImpulso" width="700" height="150"></canvas>
+
+            <div class="controles">
+                <label>Fuerza del motor (F): <span id="valFImpulso">500</span> N
+                    <input type="range" id="sliderFImpulso" min="100" max="2000" step="50" value="500">
+                </label>
+                <label>Tiempo de encendido (Δt): <span id="valTImpulso">2</span> s
+                    <input type="range" id="sliderTImpulso" min="0.5" max="8" step="0.5" value="2">
+                </label>
+                <label>Masa de la nave: <span id="valMImpulso">200</span> kg
+                    <input type="range" id="sliderMImpulso" min="50" max="500" step="10" value="200">
+                </label>
+            </div>
+
+            <p class="datos-sim">
+                J = <span id="outJ">0</span> N·s &nbsp;|&nbsp;
+                Δv = <span id="outDeltaV">0.0</span> m/s
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Calculadora de impulso: al ajustar la fuerza del motor, el tiempo de encendido y
+            la masa de la nave, se calcula el impulso generado y el cambio de velocidad
+            resultante, igual que en un simulador de propulsión espacial.
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software — Colisiones Inelásticas</h4>
+
+        <p>
+            Un caso concreto es el sistema de colisiones de un videojuego estilo Asteroids,
+            donde dos naves chocan y quedan fusionadas en una sola (por ejemplo, al ser
+            capturadas por un rayo tractor). El motor físico debe calcular la velocidad
+            resultante del objeto combinado según la masa y velocidad de cada nave, en lugar
+            de detenerlas arbitrariamente o unirlas con una velocidad fija.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Colisión perfectamente inelástica (los cuerpos quedan unidos):</strong></p>
+
+        <p>v' = (m₁v₁ + m₂v₂) / (m₁ + m₂)</p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            Aplicar la conservación del momento lineal en el choque produce un resultado
+            coherente con la masa de cada nave: una nave pesada que choca con una pequeña
+            apenas cambia su trayectoria, mientras que dos naves de masa similar se reparten
+            el momento de forma equilibrada. Esto es más creíble que detener o unir los
+            objetos con una velocidad arbitraria.
+        </p>
+
+        <h4>Elemento de apoyo</h4>
+
+        <div class="simulacion">
+            <canvas id="canvasColision" width="700" height="180"></canvas>
+
+            <div class="controles">
+                <label>Masa 1: <span id="valM1">2</span> kg
+                    <input type="range" id="sliderM1" min="1" max="8" step="0.5" value="2">
+                </label>
+                <label>Masa 2: <span id="valM2">4</span> kg
+                    <input type="range" id="sliderM2" min="1" max="8" step="0.5" value="4">
+                </label>
+                <button class="btn-sim" id="btnColision">Lanzar</button>
+                <button class="btn-sim secundario" id="btnColisionReset">Reiniciar</button>
+            </div>
+
+            <p class="datos-sim">
+                v' final = <span id="outV1p">0.0</span> m/s &nbsp;|&nbsp;
+                p total = <span id="outPTotal">0.0</span> kg·m/s
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Simulación de choque perfectamente inelástico entre dos naves: se ajustan las
+            masas y se observa cómo quedan unidas moviéndose a una velocidad común que
+            conserva el momento lineal total del sistema.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="semana" id="semana6">
+
+    <h2>Semana 6</h2>
+
+    <h3>Torque y Conservación del Momento Angular</h3>
+
+    <div class="card">
+
+        <p>
+            El torque (o momento de fuerza) mide qué tanto una fuerza tiende a hacer girar
+            un cuerpo alrededor de un eje, y se calcula mediante el producto cruz entre el
+            vector de posición y la fuerza aplicada. El momento angular, por su parte,
+            describe la cantidad de rotación de un cuerpo y se conserva cuando no actúan
+            torques externos sobre el sistema.
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software</h4>
+
+        <p>
+            Un caso concreto es el software de control de orientación de un satélite artificial
+            mediante ruedas de reacción (reaction wheels). El sistema calcula el torque que debe
+            aplicar cada motor interno para girar el satélite hacia la orientación deseada, y
+            aprovecha la conservación del momento angular del conjunto satélite-rueda para
+            reorientarse en el vacío sin gastar combustible, algo esencial en misiones espaciales
+            de larga duración.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Torque (producto cruz):</strong></p>
+
+        <p>τ = r × F&nbsp;&nbsp;→&nbsp;&nbsp;|τ| = r·F·sen(θ)</p>
+
+        <p><strong>Conservación del momento angular:</strong></p>
+
+        <p>L = I·ω = Constante&nbsp;&nbsp;(si Στ_externo = 0)</p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            Calcular el torque real mediante el producto cruz, en vez de asumir una rotación
+            fija o predefinida, permite que el software determine con precisión cuánta energía
+            y tiempo se necesitan para reorientar el satélite según su momento de inercia
+            actual. Además, aplicar la conservación del momento angular explica por qué, al
+            reducir el radio de giro de un sistema (como una rueda de reacción que se acelera),
+            la velocidad angular del cuerpo principal debe aumentar para compensar, tal como le
+            ocurre a una patinadora que gira más rápido al recoger los brazos.
+        </p>
+
+        <h4>Elemento de apoyo</h4>
+
+        <div class="simulacion">
+            <canvas id="canvasMomentoAngular" width="700" height="260"></canvas>
+
+            <div class="controles">
+                <label>Radio de giro (r): <span id="valRGiro">90</span> px
+                    <input type="range" id="sliderRGiro" min="30" max="110" step="5" value="90">
+                </label>
+                <button class="btn-sim" id="btnMomentoAngular">Iniciar / Pausar</button>
+            </div>
+
+            <p class="datos-sim">
+                I (relativo) = <span id="outIRel">0.00</span> &nbsp;|&nbsp;
+                ω = <span id="outOmegaL">0.00</span> rad/s &nbsp;|&nbsp;
+                L = I·ω = <span id="outLConst">0.00</span> (constante)
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Simulación de conservación del momento angular: al reducir el radio de giro (r) con
+            el control deslizante mientras el objeto rota, la velocidad angular (ω) aumenta
+            automáticamente para mantener L = I·ω constante, igual que ocurre al acercar una
+            masa giratoria al eje de rotación en un sistema real.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="semana" id="semana8">
+
+    <h2>Semana 8</h2>
+
+    <h3>Gravitación: Satélites Artificiales y Exploración Espacial</h3>
+
+    <div class="card">
+
+        <p>
+            La ley de gravitación universal describe la fuerza de atracción entre dos cuerpos
+            en función de sus masas y la distancia que los separa. A partir de ella se deduce
+            la velocidad orbital necesaria para que un satélite se mantenga en una órbita
+            estable alrededor de un planeta, sin caer hacia él ni escapar al espacio, así como
+            el período que tarda en completar una vuelta (relacionado mediante la tercera ley
+            de Kepler).
+        </p>
+
+        <h4>Aplicación en Ingeniería de Software</h4>
+
+        <p>
+            Un caso concreto es el software de planificación de misiones espaciales (similar al
+            que usan agencias como la NASA) que calcula la velocidad orbital y el período de un
+            satélite artificial para posicionarlo correctamente alrededor de la Tierra, por
+            ejemplo, para que un satélite de comunicaciones permanezca geoestacionario sobre un
+            mismo punto del planeta.
+        </p>
+
+        <h4>Concepto físico aplicado</h4>
+
+        <p><strong>Ley de gravitación universal:</strong></p>
+
+        <p>F = G · (m₁·m₂) / r²</p>
+
+        <p><strong>Velocidad orbital (órbita circular):</strong></p>
+
+        <p>v = √(G·M / r)</p>
+
+        <p><strong>Período orbital (3ª ley de Kepler):</strong></p>
+
+        <p>T = 2π · √(r³ / (G·M))</p>
+
+        <h4>Justificación</h4>
+
+        <p>
+            Calcular la velocidad orbital real a partir de la gravitación permite que el
+            software determine con exactitud la altura y velocidad a la que debe colocarse un
+            satélite según el objetivo de la misión (comunicaciones, GPS, observación
+            terrestre). Elegir una velocidad arbitraria, sin basarse en la física real, haría
+            que el satélite caiga de vuelta a la Tierra o se escape de la órbita, arruinando la
+            misión.
+        </p>
+
+        <h4>Elemento de apoyo</h4>
+
+        <div class="simulacion">
+            <canvas id="canvasOrbita" width="700" height="300"></canvas>
+
+            <div class="controles">
+                <label>Altitud orbital: <span id="valAltOrbita">300</span> km
+                    <input type="range" id="sliderAltOrbita" min="200" max="900" step="10" value="300">
+                </label>
+                <button class="btn-sim" id="btnOrbita">Iniciar / Pausar</button>
+            </div>
+
+            <p class="datos-sim">
+                v orbital = <span id="outVOrbital">0.00</span> km/s &nbsp;|&nbsp;
+                Período = <span id="outPeriodo">0.0</span> min
+            </p>
+        </div>
+
+        <p class="descripcion-imagen">
+            Simulación de un satélite en órbita circular alrededor de la Tierra: al cambiar la
+            altitud, se recalculan en tiempo real la velocidad orbital y el período según la
+            ley de gravitación universal, y el satélite se mueve en el canvas a la velocidad
+            angular correspondiente.
+        </p>
 
     </div>
 
@@ -405,6 +823,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="simulaciones.js"></script>
 
 </body>
 
